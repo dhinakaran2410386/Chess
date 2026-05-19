@@ -1,0 +1,16 @@
+# Chess Scoresheet OCR Pipeline — Dependencies
+# Install with:  pip install -r requirements.txt
+
+opencv-python>=4.8.0
+numpy>=1.24.0
+pytesseract>=0.3.10      # primary OCR back-end  (requires Tesseract binary)
+easyocr>=1.7.0           # optional alternative OCR back-end
+
+# Dev / testing
+pytest>=7.4.0
+
+# Chess Pipeline – Modules 2 & 3 Dependencies
+# Install with:  pip install -r requirements.txt
+
+chess>=1.10.0          # python-chess: board state, legal move generation, SAN parsing
+pytest>=7.4.0          # test runner

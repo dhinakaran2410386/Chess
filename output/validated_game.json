@@ -1,0 +1,214 @@
+{
+  "moves": [
+    {
+      "move_number": 1,
+      "side": "white",
+      "ocr_text": "e4",
+      "san": "e4",
+      "uci": "e2e4",
+      "status": "OK",
+      "correction": "",
+      "confidence": 0.97
+    },
+    {
+      "move_number": 1,
+      "side": "black",
+      "ocr_text": "e5",
+      "san": "e5",
+      "uci": "e7e5",
+      "status": "OK",
+      "correction": "",
+      "confidence": 0.96
+    },
+    {
+      "move_number": 2,
+      "side": "white",
+      "ocr_text": "Hf3",
+      "san": "Nf3",
+      "uci": "g1f3",
+      "status": "CORRECTED",
+      "correction": "H piece (OCR noise) \u2192 N (Knight)",
+      "confidence": 0.71
+    },
+    {
+      "move_number": 2,
+      "side": "black",
+      "ocr_text": "Hc6",
+      "san": "Nc6",
+      "uci": "b8c6",
+      "status": "CORRECTED",
+      "correction": "H piece (OCR noise) \u2192 N (Knight)",
+      "confidence": 0.68
+    },
+    {
+      "move_number": 3,
+      "side": "white",
+      "ocr_text": "Bb5",
+      "san": "Bb5",
+      "uci": "f1b5",
+      "status": "OK",
+      "correction": "",
+      "confidence": 0.93
+    },
+    {
+      "move_number": 3,
+      "side": "black",
+      "ocr_text": "a6",
+      "san": "a6",
+      "uci": "a7a6",
+      "status": "OK",
+      "correction": "",
+      "confidence": 0.91
+    },
+    {
+      "move_number": 4,
+      "side": "white",
+      "ocr_text": "Ba4",
+      "san": "Ba4",
+      "uci": "b5a4",
+      "status": "OK",
+      "correction": "",
+      "confidence": 0.88
+    },
+    {
+      "move_number": 4,
+      "side": "black",
+      "ocr_text": "Hf6",
+      "san": "Nf6",
+      "uci": "g8f6",
+      "status": "CORRECTED",
+      "correction": "H piece (OCR noise) \u2192 N (Knight)",
+      "confidence": 0.7
+    },
+    {
+      "move_number": 5,
+      "side": "white",
+      "ocr_text": "0-0",
+      "san": "O-O",
+      "uci": "e1g1",
+      "status": "CORRECTED",
+      "correction": "castling 0-0 \u2192 O-O",
+      "confidence": 0.82
+    },
+    {
+      "move_number": 5,
+      "side": "black",
+      "ocr_text": "Be7",
+      "san": "Be7",
+      "uci": "f8e7",
+      "status": "OK",
+      "correction": "",
+      "confidence": 0.87
+    },
+    {
+      "move_number": 6,
+      "side": "white",
+      "ocr_text": "Re1",
+      "san": "Re1",
+      "uci": "f1e1",
+      "status": "OK",
+      "correction": "",
+      "confidence": 0.9
+    },
+    {
+      "move_number": 6,
+      "side": "black",
+      "ocr_text": "b5",
+      "san": "b5",
+      "uci": "b7b5",
+      "status": "OK",
+      "correction": "",
+      "confidence": 0.93
+    },
+    {
+      "move_number": 7,
+      "side": "white",
+      "ocr_text": "Bb3",
+      "san": "Bb3",
+      "uci": "a4b3",
+      "status": "OK",
+      "correction": "",
+      "confidence": 0.85
+    },
+    {
+      "move_number": 7,
+      "side": "black",
+      "ocr_text": "d6",
+      "san": "d6",
+      "uci": "d7d6",
+      "status": "OK",
+      "correction": "",
+      "confidence": 0.9
+    },
+    {
+      "move_number": 8,
+      "side": "white",
+      "ocr_text": "c3",
+      "san": "c3",
+      "uci": "c2c3",
+      "status": "OK",
+      "correction": "",
+      "confidence": 0.95
+    },
+    {
+      "move_number": 8,
+      "side": "black",
+      "ocr_text": "0-0",
+      "san": "O-O",
+      "uci": "e8g8",
+      "status": "CORRECTED",
+      "correction": "castling 0-0 \u2192 O-O",
+      "confidence": 0.8
+    },
+    {
+      "move_number": 9,
+      "side": "white",
+      "ocr_text": "h3",
+      "san": "h3",
+      "uci": "h2h3",
+      "status": "OK",
+      "correction": "",
+      "confidence": 0.88
+    },
+    {
+      "move_number": 9,
+      "side": "black",
+      "ocr_text": "Hb8",
+      "san": "Nb8",
+      "uci": "c6b8",
+      "status": "CORRECTED",
+      "correction": "H piece (OCR noise) \u2192 N (Knight)",
+      "confidence": 0.55
+    },
+    {
+      "move_number": 10,
+      "side": "white",
+      "ocr_text": "d4",
+      "san": "d4",
+      "uci": "d2d4",
+      "status": "OK",
+      "correction": "",
+      "confidence": 0.92
+    },
+    {
+      "move_number": 10,
+      "side": "black",
+      "ocr_text": "",
+      "san": "[UNKNOWN]",
+      "uci": "",
+      "status": "MISSING",
+      "correction": "Move absent from OCR output.",
+      "confidence": 0.0
+    }
+  ],
+  "flags": [
+    "Move count mismatch: White=10, Black=9. White has 1 extra move(s).",
+    "Move 2 [white]: corrected 'Hf3' \u2192 'Nf3'. Reason: H piece (OCR noise) \u2192 N (Knight)",
+    "Move 2 [black]: corrected 'Hc6' \u2192 'Nc6'. Reason: H piece (OCR noise) \u2192 N (Knight)",
+    "Move 4 [black]: corrected 'Hf6' \u2192 'Nf6'. Reason: H piece (OCR noise) \u2192 N (Knight)",
+    "Move 5 [white]: corrected '0-0' \u2192 'O-O'. Reason: castling 0-0 \u2192 O-O",
+    "Move 8 [black]: corrected '0-0' \u2192 'O-O'. Reason: castling 0-0 \u2192 O-O",
+    "Move 9 [black]: corrected 'Hb8' \u2192 'Nb8'. Reason: H piece (OCR noise) \u2192 N (Knight)",
+    "Move 10 [black]: marked [UNKNOWN]. Move absent from OCR output."
+  ]
+}

@@ -1,0 +1,18 @@
+[Event "Ruy Lopez Training Game"]
+[Site "Chennai Chess Academy"]
+[Date "2026.05.19"]
+[Round "1"]
+[White "Arjun, V."]
+[Black "Priya, S."]
+[Result "*"]
+
+[Annotator "ChessOCR Pipeline v1.0"]
+[ECO "C78"]
+
+1. e4 e5 2. Nf3 {OCR read 'Hf3'; corrected: H piece (OCR noise) → N (Knight)}
+Nc6 {OCR read 'Hc6'; corrected: H piece (OCR noise) → N (Knight)} 3. Bb5 a6 4.
+Ba4 Nf6 {OCR read 'Hf6'; corrected: H piece (OCR noise) → N (Knight)} 5. O-O
+{OCR read '0-0'; corrected: castling 0-0 → O-O} Be7 6. Re1 b5 7. Bb3 d6 8. c3
+O-O {OCR read '0-0'; corrected: castling 0-0 → O-O} 9. h3 Nb8
+{OCR read 'Hb8'; corrected: H piece (OCR noise) → N (Knight)} 10. d4 [UNKNOWN]
+$6 {Move absent from OCR output.} *

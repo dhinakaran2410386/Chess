@@ -1,0 +1,126 @@
+name: Run PGN Formatter Examples
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  run-examples:
+    runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        python-version: ['3.9', '3.10', '3.11']
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ matrix.python-version }}
+    
+    - name: Display Python version
+      run: python -c "import sys; print(f'Python {sys.version}')"
+    
+    - name: Run PGN Formatter Examples
+      run: python examples.py
+    
+    - name: Create Sample PGN File
+      run: |
+        python3 << 'EOF'
+        from pgn_formatter import PGNFormatter
+        
+        pgn = PGNFormatter()
+        pgn.create_header(
+            event="GitHub Actions Test Game",
+            site="Cloud",
+            date="2026.05.19",
+            round_number="1",
+            white_player="Test White",
+            black_player="Test Black",
+            result="1-0"
+        )
+        pgn.add_moves(['e4', 'e5', 'Nf3', 'Nc6', 'Bc4', 'Bc5', 'O-O', 'Nf6'])
+        pgn.export_to_file("test_output.pgn")
+        print("✓ Sample PGN file created successfully!")
+        EOF
+    
+    - name: Verify PGN Output
+      run: cat test_output.pgn
+
+  test-pgn-formatter:
+    runs-on: ubuntu-latest
+    needs: run-examples
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+    
+    - name: Test PGN Formatter API
+      run: |
+        python3 << 'EOF'
+        from pgn_formatter import PGNFormatter, create_pgn_from_moves
+        
+        print("Test 1: Basic PGN Creation...")
+        pgn = PGNFormatter()
+        pgn.create_header(
+            event="Test Event",
+            site="Test Site",
+            date="2026.05.19",
+            round_number="1",
+            white_player="Player A",
+            black_player="Player B",
+            result="1/2-1/2"
+        )
+        pgn.add_moves(['d4', 'd5', 'c4'])
+        output = pgn.generate_pgn()
+        assert "[Event" in output
+        assert "1/2-1/2" in output
+        print("✓ Test 1 PASSED")
+        
+        print("\nTest 2: Supplemental Tags...")
+        pgn2 = PGNFormatter()
+        pgn2.create_header(
+            event="Test",
+            site="Test",
+            date="2026.05.19",
+            round_number="2",
+            white_player="C",
+            black_player="D",
+            result="0-1"
+        )
+        pgn2.add_supplemental_tags({'ECO': 'D30', 'Opening': 'Semi-Slav'})
+        pgn2.add_moves(['e4', 'c5'])
+        output2 = pgn2.generate_pgn()
+        assert "ECO" in output2
+        assert "Opening" in output2
+        print("✓ Test 2 PASSED")
+        
+        print("\nTest 3: Convenience Function...")
+        pgn_text = create_pgn_from_moves(
+            event="Quick Test",
+            site="Auto",
+            date="2026.05.19",
+            round_number="3",
+            white_player="E",
+            black_player="F",
+            result="*",
+            moves=['e4', 'e5', 'Nf3', 'Nc6']
+        )
+        assert "e4 e5" in pgn_text
+        print("✓ Test 3 PASSED")
+        
+        print("\n" + "="*50)
+        print("ALL TESTS PASSED! ✓")
+        print("="*50)
+        EOF
